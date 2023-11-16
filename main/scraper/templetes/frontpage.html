@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %} 
+<div class="post block">
+    <h2 class="subtitle">{{ title }}</h2>
+    <p>{{ common_words }}</p>
+
+    <h3>Images</h3>
+    {% if image_urls %}
+        {% for image_url in image_urls %}
+            <img src="{{ image_url }}" alt="Image from {{ webdata.title }}" style="width: 200px; margin: 10px;">
+        {% endfor %}
+    {% else %}
+        <p>No images found.</p>
+    {% endif %}
+</div>
+{% endblock %}
